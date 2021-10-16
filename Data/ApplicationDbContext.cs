@@ -21,6 +21,8 @@ namespace DB_College_Management.Data
 
        protected override void OnModelCreating(ModelBuilder modelBuilder)
        {
+           base.OnModelCreating(modelBuilder);
+
            modelBuilder.Entity<Student>()
            .HasMany(s => s.Professors)
            .WithMany(p => p.Students);

@@ -12,6 +12,7 @@ using DB_College_Management.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Pomelo.EntityFrameworkCore;
 
 namespace DB_College_Management
 {
@@ -27,9 +28,17 @@ namespace DB_College_Management
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlite(
-                    Configuration.GetConnectionString("DefaultConnection")));
+            var mysql_password = Configuration["MYSQL_PASSWORD"];
+            var mysql_user = Configuration["MYSQL_USER"];
+
+            var connectionString = $"server=localhost;user={mysql_user};password={mysql_password};database=db_college_management";
+            var serverVersion = new MySqlServerVersion(new Version(8, 0, 26));
+
+            services.AddDbContext<ApplicationDbContext>(options => 
+                options.UseMySql(connectionString, serverVersion)
+                    .LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information)
+                    .EnableDetailedErrors());
+
             services.AddDatabaseDeveloperPageExceptionFilter();
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
