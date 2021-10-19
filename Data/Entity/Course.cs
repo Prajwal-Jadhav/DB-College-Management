@@ -13,5 +13,7 @@ namespace DB_College_Management.Data.Entity
         public int Strength { get; set; }
 
         public Professor Professor { get; set; }
+
+        public Department Department { get; set; }
     }
 }

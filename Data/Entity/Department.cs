@@ -9,5 +9,9 @@ namespace DB_College_Management.Data.Entity
         public string Name { get; set; }
 
         public List<Professor> Professors { get; set; }
+
+        public List<Student> Students { get; set; }
+
+        public List<Course> Courses { get; set; }
     }
 }

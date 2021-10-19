@@ -34,6 +34,14 @@ namespace DB_College_Management.Data
            modelBuilder.Entity<Professor>()
            .HasOne(p => p.Department)
            .WithMany(d => d.Professors);
+
+           modelBuilder.Entity<Student>()
+           .HasOne(s => s.Department)
+           .WithMany(d => d.Students);
+
+           modelBuilder.Entity<Course>()
+           .HasOne(c => c.Department)
+           .WithMany(d => d.Courses);
        }
     }
 }

@@ -28,5 +28,7 @@ namespace DB_College_Management.Data.Entity
         public string Address { get; set; }
 
         public List<Professor> Professors { get; set; }
+
+        public Department Department { get; set; }
     }
 }
