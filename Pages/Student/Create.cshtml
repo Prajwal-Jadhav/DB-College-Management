@@ -1,7 +1,5 @@
 @page
 @model DB_College_Management.Pages.Student.CreateModel
-
-
    
  
   <section class="bg-image"
@@ -43,7 +41,7 @@
                                   </div>
   
                                   <div class="form-group row">
-                                      <label asp-for="Input.MobileNo" class="col-md-4 col-form-label text-md-right">Mobile_Number</label>
+                                      <label asp-for="Input.MobileNo" class="col-md-4 col-form-label text-md-right">MobileNo</label>
                                       <div class="col-md-6">
                                           <input asp-for="Input.MobileNo" type="text" id="mobile_number" class="form-control">
                                           <span asp-validation-for="Input.MobileNo" class="text-danger"></span>
@@ -69,17 +67,15 @@
                                   <div class="form-group row">
                                       <label asp-for="Input.Year" class="col-md-4 col-form-label text-md-right">Year</label>
                                       <div class="col-md-6">
-                                          <input asp-for="Input.Year"type="text" id="year" class="form-control" name="year">
+                                          <input asp-for="Input.Year"type="text" id="year" class="form-control" name="year" />
                                           <span asp-validation-for="Input.Year" class="text-danger"></span>
                                       </div>
                                   </div>
   
-                                      <div class="col-md-6 offset-md-4">
-                                          <button type="submit" class="btn btn-primary">
-                                          Submit
-                                          </button>
-                                      </div>
-                              </form>
+                                    <div class="col-md-6 offset-md-4">
+                                          <input type="submit" class="btn btn-primary" />
+                                    </div>
+                                 </form>
                           </div>
                       </div>
               </div>
@@ -87,4 +83,6 @@
       </div>
     </div>
   </section>
+  
+  
   
