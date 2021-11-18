@@ -1,0 +1,88 @@
+﻿@page
+@model DB_College_Management.Pages.Professor.CreateModel
+@{
+}
+
+<section class="bg-image"
+  style="
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+    height: 100vh;
+  ">
+  <div class="my-form">
+      <div class="cotainer">
+          <div class="row justify-content-center">
+              <div class="col-md-8">
+                      <div class="card">
+                          <div class="card-header">Register</div>
+                          <div class="card-body">
+
+                              <form method="post" asp-page="/Professor/Create">
+                                  <div asp-validation-summary="All" class="text-danger"></div>
+
+                                  <div class="form-group row">
+                                      <label asp-for="Input.Id" class="col-md-4 col-form-label text-md-right"></label>
+                                      <div class="col-md-6">
+                                          <input asp-for="Input.Id" class="form-control" />
+                                          <span asp-validation-for="Input.Id" class="text-danger"></span>
+                                      </div>
+                                  </div>
+  
+                                  <div class="form-group row">
+                                      <label asp-for="Input.Name" class="col-md-4 col-form-label text-md-right"></label>
+                                      <div class="col-md-6">
+                                          <input asp-for="Input.Name" class="form-control" />
+                                          <span asp-validation-for="Input.Name" class="text-danger"></span>
+                                      </div>
+                                  </div>
+  
+                                  <div class="form-group row">
+                                      <label asp-for="Input.Qualification" class="col-md-4 col-form-label text-md-right"></label>
+                                      <div class="col-md-6">
+                                          <input asp-for="Input.Qualification" class="form-control" />
+                                          <span asp-validation-for="Input.Qualification" class="text-danger"></span>
+                                      </div>
+                                  </div>
+  
+                                  <div class="form-group row">
+                                      <label asp-for="Input.MobileNo" class="col-md-4 col-form-label text-md-right"></label>
+                                      <div class="col-md-6">
+                                          <input asp-for="Input.MobileNo" class="form-control">
+                                          <span asp-validation-for="Input.MobileNo" class="text-danger"></span>
+                                      </div>
+                                  </div>
+  
+                                  <div class="form-group row">
+                                      <label asp-for="Input.Address" class="col-md-4 col-form-label text-md-right"></label>
+                                      <div class="col-md-6">
+                                          <input asp-for="Input.Address" class="form-control" />
+                                          <span asp-validation-for="Input.Address" class="text-danger"></span>
+                                      </div>
+                                  </div>
+  
+                                  <div class="form-group row">
+                                      <label asp-for="Input.Email" class="col-md-4 col-form-label text-md-right"></label>
+                                      <div class="col-md-6">
+                                          <input asp-for="Input.Email" class="form-control" />
+                                          <span asp-validation-for="Input.Email" class="text-danger"></span>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label asp-for="Input.Salary" class="col-md-4 col-form-label text-md-right"></label>
+                                      <div class="col-md-6">
+                                          <input asp-for="Input.Salary" class="form-control"/>
+                                          <span asp-validation-for="Input.Salary" class="text-danger"></span>
+                                      </div>
+                                  </div>
+  
+                                    <div class="col-md-6 offset-md-4">
+                                            <input type="submit" value="Create" class="btn btn-primary" />
+                                    </div>
+                                 </form>
+                          </div>
+                      </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>

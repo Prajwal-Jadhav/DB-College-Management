@@ -1,11 +1,14 @@
 using System;
 using System.ComponentModel.DataAnnotations;
-using System.Collections.Generic;
 
-namespace DB_College_Management.Data.Entity
+namespace DB_College_Management.Model.Professor
 {
-    public class Professor
+    /**
+    * <summary>Used to bind the form values submitted through POST request to create a professor database model</summary>
+    */
+    public class CreateBindingModel
     {
+        [MaxLength(length: 20)]
         public int Id { get; set; }
 
         public string Name { get; set; }
@@ -21,11 +24,5 @@ namespace DB_College_Management.Data.Entity
         public string Email { get; set; }
 
         public Decimal Salary { get; set; }
-
-        public List<Student> Students { get; set; }
-
-        public List<Course> Courses { get; set; }
-
-        public Department Department { get; set; }
     }
 }
