@@ -1,0 +1,22 @@
+@page "{prn}"
+@model DB_College_Management.Pages.Student.DetailsModel
+
+<div>
+    <div>Student Details</div>
+
+    <div>PRN: @Model.Student.PRN</div>
+    <div>Name: @Model.Student.Name</div>
+    <div>Age: @Model.Student.Age</div>
+    <div>Birth Day: @Model.Student.BirthDay.ToShortDateString()</div>
+    <div>Mobile No: @Model.Student.MobileNo</div>
+    <div>Year Studying: @Model.Student.Year</div>
+    <div>Email: @Model.Student.Email</div>
+    <div>Address: @Model.Student.Address</div>
+
+    <div>
+        <a asp-page="/Students/Edit" asp-route-prn="@Model.Student.PRN">Edit</a>
+        <form asp-page="/Students/Delete" asp-route-prn="@Model.Student.PRN">
+            <input type="submit" value="Delete" />
+        </form>
+    </div>
+</div>

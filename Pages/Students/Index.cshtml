@@ -1,0 +1,16 @@
+@page
+@model DB_College_Management.Pages.Student.IndexModel
+
+@{
+    ViewData["Title"] = "Student List";
+}
+
+<div>
+    @foreach (var student in Model.Students)
+    {
+        <a asp-page="/Students/Details" asp-route-PRN="@student.PRN">
+            <div>PRN: @student.PRN</div>
+            <div>Name: @student.Name</div>
+        </a>
+    }
+</div>
