@@ -30,17 +30,5 @@ namespace DB_College_Management.Data.Entity
         public List<Professor> Professors { get; set; }
 
         public Department Department { get; set; }
-
-        public Student(string name, string pRN, string email, long mobileNo, string address, DateTime birthDay, int year, int age)
-        {
-            Name = name;
-            PRN = pRN;
-            Email = email;
-            MobileNo = mobileNo;
-            Address = address;
-            BirthDay = birthDay;
-            Year = year;
-            Age = age;
-        }
     }
 }

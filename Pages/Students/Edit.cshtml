@@ -1,5 +1,5 @@
 @page "{prn}"
-@model DB_College_Management.Pages.Student.CreateModel
+@model DB_College_Management.Pages.Students.EditModel
 
 @{
     ViewData["Title"] = "Edit Student";
@@ -61,10 +61,10 @@
                                   </div>
   
                                   <div class="form-group row">
-                                      <label asp-for="Input.BirthDate" class="col-md-4 col-form-label text-md-right"></label>
+                                      <label asp-for="Input.BirthDay" class="col-md-4 col-form-label text-md-right"></label>
                                       <div class="col-md-6">
-                                          <input asp-for="Input.BirthDate" class="form-control" />
-                                          <span asp-validation-for="Input.BirthDate" class="text-danger"></span>
+                                          <input asp-for="Input.BirthDay" type="date" class="form-control" />
+                                          <span asp-validation-for="Input.BirthDay" class="text-danger"></span>
                                       </div>
                                   </div>
   

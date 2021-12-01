@@ -10,7 +10,7 @@ using DB_College_Management.Model.Student;
 using DB_College_Management.Data;
 using DB_College_Management.Data.Entity;
 
-namespace DB_College_Management.Pages.Student
+namespace DB_College_Management.Pages.Students
 {
     public class CreateModel: PageModel
     {
@@ -38,9 +38,17 @@ namespace DB_College_Management.Pages.Student
 
             int age = CalculateAge(Input.BirthDate);
 
-            var student = new DB_College_Management.Data.Entity.Student(
-                Input.Name, Input.PRN, Input.Email, Input.MobileNo, Input.Address, Input.BirthDate, Input.Year, age
-            );
+            var student = new DB_College_Management.Data.Entity.Student()
+            {
+                Name = Input.Name, 
+                PRN = Input.PRN, 
+                Email = Input.Email, 
+                MobileNo = Input.MobileNo, 
+                Address = Input.Address, 
+                BirthDay = Input.BirthDate, 
+                Year = Input.Year, 
+                Age = age
+            };
 
             _context.Students.Add(student);
 

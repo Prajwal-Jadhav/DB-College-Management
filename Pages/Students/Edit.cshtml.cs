@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using DB_College_Management.Data;
 using Microsoft.EntityFrameworkCore;
 
-namespace DB_College_Management.Pages.Student
+namespace DB_College_Management.Pages.Students
 {
     public class EditModel: PageModel
     {
@@ -39,19 +39,31 @@ namespace DB_College_Management.Pages.Student
                 return Page();
             }
 
+            int age = CalculateAge(Input.BirthDay);
+
             var student = await _context.Students.Where(s => s.PRN == prn).FirstOrDefaultAsync();
 
             student.PRN = Input.PRN;
             student.Name = Input.Name;
             student.BirthDay = Input.BirthDay;
             student.Email = Input.Email;
-            student.Age = Input.Age;
+            student.Year = Input.Year;
             student.MobileNo = Input.MobileNo;
             student.Address = Input.Address;
+            student.Age = age;
             
             await _context.SaveChangesAsync();
 
             return RedirectToPage("/Students/Details", new { prn = prn });
+        }
+
+        public int CalculateAge(DateTime birthDay)
+        {
+            var currentYear = DateTime.Now.Year;
+
+            var age = currentYear - birthDay.Year;
+
+            return age;
         }
     }
 }
