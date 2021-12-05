@@ -24,7 +24,7 @@ namespace DB_College_Management.Pages.Student
 
         public async Task<IActionResult> OnGetAsync()
         {
-            Students = await _context.Students.ToListAsync();
+            Students = await _context.Students.OrderBy(student => student.PRN).ToListAsync();
 
             return Page();
         }

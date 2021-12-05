@@ -2,19 +2,22 @@
 @model DB_College_Management.Pages.Student.DetailsModel
 
 <div>
-    <div>Student Details</div>
+    <div class="jumbotron">
+        <h2>Student Details</h2>
+    </div>
+    <ul class="list-group">
+        <li class="list-group-item"><strong>PRN</strong>: @Model.Student.PRN</li>
+        <li class="list-group-item"><strong>Name</strong>: @Model.Student.Name</li>
+        <li class="list-group-item"><strong>Age</strong>: @Model.Student.Age</li>
+        <li class="list-group-item"><strong>Birthday</strong>: @Model.Student.BirthDay.ToShortDateString()</li>
+        <li class="list-group-item"><strong>Mobile No</strong>: @Model.Student.MobileNo</li>
+        <li class="list-group-item"><strong>Year Studying</strong>: @Model.Student.Year</li>
+        <li class="list-group-item"><strong>Email</strong>: @Model.Student.Email</li>
+        <li class="list-group-item"><strong>Address</strong>: @Model.Student.Address</li>
+    </ul>
 
-    <div>PRN: @Model.Student.PRN</div>
-    <div>Name: @Model.Student.Name</div>
-    <div>Age: @Model.Student.Age</div>
-    <div>Birth Day: @Model.Student.BirthDay.ToShortDateString()</div>
-    <div>Mobile No: @Model.Student.MobileNo</div>
-    <div>Year Studying: @Model.Student.Year</div>
-    <div>Email: @Model.Student.Email</div>
-    <div>Address: @Model.Student.Address</div>
-
-    <div>
-        <a asp-page="/Students/Edit" asp-route-prn="@Model.Student.PRN">Edit</a>
+    <div style="display: flex; justify-content: center;" class="mx-auto mt-3">
+        <a asp-page="/Students/Edit" asp-route-prn="@Model.Student.PRN" class="btn btn-primary mr-2" >Edit</a>
         <form asp-page="/Students/Delete" asp-route-prn="@Model.Student.PRN">
             <input type="submit" value="Delete" class="btn btn-danger" />
         </form>

@@ -8,66 +8,66 @@
     height: 100vh;
   ">
   <div class="my-form">
-      <div class="cotainer">
+      <div class="container">
           <div class="row justify-content-center">
               <div class="col-md-8">
                       <div class="card">
-                          <div class="card-header">Register</div>
+                          <div class="card-header">Create A Student</div>
                           <div class="card-body">
                               <form method="post" asp-page="/Student/Create">
                                   <div asp-validation-summary="All" class="text-danger"></div>
                                   <div class="form-group row">
-                                      <label asp-for="Input.Name" class="col-md-4 col-form-label text-md-right">Name</label>
+                                      <label asp-for="Input.Name" class="col-md-4 col-form-label text-md-right"></label>
                                       <div class="col-md-6">
-                                          <input asp-for="Input.Name"type="text" id="full_name" class="form-control" name="full-name">
+                                          <input asp-for="Input.Name" class="form-control" />
                                           <span asp-validation-for="Input.Name" class="text-danger"></span>
                                       </div>
                                   </div>
   
                                   <div class="form-group row">
-                                      <label asp-for="Input.PRN" class="col-md-4 col-form-label text-md-right">PRN</label>
+                                      <label asp-for="Input.PRN" class="col-md-4 col-form-label text-md-right"></label>
                                       <div class="col-md-6">
-                                          <input asp-for="Input.PRN" type="text" id="PRN" class="form-control" name="PRN">
+                                          <input asp-for="Input.PRN" class="form-control">
                                           <span asp-validation-for="Input.PRN" class="text-danger"></span>
                                       </div>
                                   </div>
   
                                   <div class="form-group row">
-                                      <label asp-for="Input.Email" class="col-md-4 col-form-label text-md-right">Email</label>
+                                      <label asp-for="Input.Email" class="col-md-4 col-form-label text-md-right"></label>
                                       <div class="col-md-6">
-                                          <input asp-for="Input.Email"type="text" id="email" class="form-control" name="email">
+                                          <input asp-for="Input.Email" class="form-control" />
                                           <span asp-validation-for="Input.Email" class="text-danger"></span>
                                       </div>
                                   </div>
   
                                   <div class="form-group row">
-                                      <label asp-for="Input.MobileNo" class="col-md-4 col-form-label text-md-right">MobileNo</label>
+                                      <label asp-for="Input.MobileNo" class="col-md-4 col-form-label text-md-right"></label>
                                       <div class="col-md-6">
-                                          <input asp-for="Input.MobileNo" type="text" id="mobile_number" class="form-control">
+                                          <input asp-for="Input.MobileNo" class="form-control">
                                           <span asp-validation-for="Input.MobileNo" class="text-danger"></span>
                                       </div>
                                   </div>
   
                                   <div class="form-group row">
-                                      <label asp-for="Input.Address" class="col-md-4 col-form-label text-md-right">Address</label>
+                                      <label asp-for="Input.Address" class="col-md-4 col-form-label text-md-right"></label>
                                       <div class="col-md-6">
-                                          <input asp-for="Input.Address" type="text" id="address" class="form-control">
+                                          <input asp-for="Input.Address" class="form-control" />
                                           <span asp-validation-for="Input.Address" class="text-danger"></span>
                                       </div>
                                   </div>
   
                                   <div class="form-group row">
-                                      <label asp-for="Input.BirthDate" class="col-md-4 col-form-label text-md-right">BirthDate</label>
+                                      <label asp-for="Input.BirthDate" class="col-md-4 col-form-label text-md-right"></label>
                                       <div class="col-md-6">
-                                          <input asp-for="Input.BirthDate"type="text" id="BirthDate" class="form-control" name="BirthDate">
+                                          <input asp-for="Input.BirthDate" class="form-control">
                                           <span asp-validation-for="Input.BirthDate" class="text-danger"></span>
                                       </div>
                                   </div>
   
                                   <div class="form-group row">
-                                      <label asp-for="Input.Year" class="col-md-4 col-form-label text-md-right">Year</label>
+                                      <label asp-for="Input.Year" class="col-md-4 col-form-label text-md-right"></label>
                                       <div class="col-md-6">
-                                          <input asp-for="Input.Year"type="text" id="year" class="form-control" name="year" />
+                                          <input asp-for="Input.Year" class="form-control" />
                                           <span asp-validation-for="Input.Year" class="text-danger"></span>
                                       </div>
                                   </div>
