@@ -10,21 +10,22 @@ using DB_College_Management.Model.Student;
 using DB_College_Management.Data;
 using DB_College_Management.Data.Entity;
 
-namespace DB_College_Management.Pages.Students
+
+namespace DB_College_Management.Pages.Courses
 {
     public class CreateModel: PageModel
     {
         private readonly ApplicationDbContext _context;
 
         [BindProperty]
-        public CreateBindingModel Input { get; set; }
+        public Course Input { get; set; }
 
         public CreateModel(ApplicationDbContext context)
         {
             _context = context;
         }
 
-        public IActionResult OnGet()
+        public IActionResult OnGetAsync()
         {
             return Page();
         }
@@ -36,34 +37,19 @@ namespace DB_College_Management.Pages.Students
                 return Page();
             }
 
-            int age = CalculateAge(Input.BirthDate);
-
-            var student = new DB_College_Management.Data.Entity.Student()
+            var course = new Course()
             {
-                Name = Input.Name, 
-                PRN = Input.PRN, 
-                Email = Input.Email, 
-                MobileNo = Input.MobileNo, 
-                Address = Input.Address, 
-                BirthDay = Input.BirthDate, 
-                Year = Input.Year, 
-                Age = age
+                CourseId = Input.CourseId,
+                Name = Input.Name,
+                Semester = Input.Semester,
+                Strength = Input.Strength
             };
 
-            _context.Students.Add(student);
+            _context.Courses.Add(course);
 
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("/Students/Index");
-        }
-
-        public int CalculateAge(DateTime birthDay)
-        {
-            var currentYear = DateTime.Now.Year;
-
-            var age = currentYear - birthDay.Year;
-
-            return age;
+            return RedirectToPage("/Courses/Index");
         }
     }
 }

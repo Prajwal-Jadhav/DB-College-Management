@@ -1,4 +1,5 @@
 
+using System.Collections.Generic;
 
 namespace DB_College_Management.Data.Entity
 {
@@ -15,5 +16,7 @@ namespace DB_College_Management.Data.Entity
         public Professor Professor { get; set; }
 
         public Department Department { get; set; }
+
+        public List<Student> Students { get; set; }
     }
 }

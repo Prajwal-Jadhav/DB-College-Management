@@ -30,5 +30,7 @@ namespace DB_College_Management.Data.Entity
         public List<Professor> Professors { get; set; }
 
         public Department Department { get; set; }
+
+        public List<Course> Courses { get; set; }
     }
 }

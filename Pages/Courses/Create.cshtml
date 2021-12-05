@@ -1,0 +1,61 @@
+@page
+@model DB_College_Management.Pages.Courses.CreateModel
+
+<section class="bg-image"
+  style="
+    background-image: url('https://mdbootstrap.com/img/Photos/Others/images/76.jpg');
+    height: 100vh;
+  ">
+  <div class="my-form">
+      <div class="container">
+          <div class="row justify-content-center">
+              <div class="col-md-8">
+                      <div class="card">
+                          <div class="card-header">Add A Course</div>
+                          <div class="card-body">
+                              <form method="post" asp-page="/Courses/Create">
+                                  <div asp-validation-summary="All" class="text-danger"></div>
+
+                                  <div class="form-group row">
+                                      <label asp-for="Input.CourseId" class="col-md-4 col-form-label text-md-right"></label>
+                                      <div class="col-md-6">
+                                          <input asp-for="Input.CourseId" class="form-control" />
+                                          <span asp-validation-for="Input.CourseId" class="text-danger"></span>
+                                      </div>
+                                  </div>
+
+                                  <div class="form-group row">
+                                      <label asp-for="Input.Name" class="col-md-4 col-form-label text-md-right"></label>
+                                      <div class="col-md-6">
+                                          <input asp-for="Input.Name" class="form-control" />
+                                          <span asp-validation-for="Input.Name" class="text-danger"></span>
+                                      </div>
+                                  </div>
+  
+                                  <div class="form-group row">
+                                      <label asp-for="Input.Semester" class="col-md-4 col-form-label text-md-right"></label>
+                                      <div class="col-md-6">
+                                          <input asp-for="Input.Semester" class="form-control">
+                                          <span asp-validation-for="Input.Semester" class="text-danger"></span>
+                                      </div>
+                                  </div>
+  
+                                  <div class="form-group row">
+                                      <label asp-for="Input.Strength" class="col-md-4 col-form-label text-md-right"></label>
+                                      <div class="col-md-6">
+                                          <input asp-for="Input.Strength" class="form-control" />
+                                          <span asp-validation-for="Input.Strength" class="text-danger"></span>
+                                      </div>
+                                  </div>
+  
+                                    <div class="col-md-6 offset-md-4">
+                                            <input type="submit" class="btn btn-primary" />
+                                    </div>
+                                 </form>
+                          </div>
+                      </div>
+              </div>
+          </div>
+      </div>
+    </div>
+  </section>
