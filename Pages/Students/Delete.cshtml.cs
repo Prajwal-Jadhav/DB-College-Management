@@ -8,9 +8,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using DB_College_Management.Data;
 using DB_College_Management.Data.Entity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DB_College_Management.Pages.Students
 {
+    [Authorize]
     public class DeleteModel: PageModel
     {
         private readonly ApplicationDbContext _context;

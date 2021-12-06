@@ -11,9 +11,11 @@ using DB_College_Management.Data;
 using DB_College_Management.Data.Entity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DB_College_Management.Pages.Courses
 {
+    [Authorize]
     public class AddStudentModel: PageModel
     {
         private readonly ApplicationDbContext _context;

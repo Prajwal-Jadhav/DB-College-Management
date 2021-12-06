@@ -9,10 +9,11 @@ using Microsoft.Extensions.Logging;
 using DB_College_Management.Model.Student;
 using DB_College_Management.Data;
 using DB_College_Management.Data.Entity;
-
+using Microsoft.AspNetCore.Authorization;
 
 namespace DB_College_Management.Pages.Courses
 {
+    [Authorize]
     public class CreateModel: PageModel
     {
         private readonly ApplicationDbContext _context;

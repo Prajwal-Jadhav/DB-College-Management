@@ -7,9 +7,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using DB_College_Management.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DB_College_Management.Pages.Students
 {
+    [Authorize]
     public class EditModel: PageModel
     {
         private readonly ApplicationDbContext _context;
