@@ -1,0 +1,20 @@
+@page
+@model DB_College_Management.Pages.Courses.IndexModel
+
+@{
+    ViewData["Title"] = "Course List";
+}
+
+<div class="mx-auto" style="display: flex; flex-direction: column; align-items: center;">
+    <a class="btn btn-primary" asp-page="/Courses/Create">Add A Course</a>
+</div>
+
+<div style="display: flex; flex-direction: column; align-items: flex-start; width: 50%;">
+    @foreach (var course in Model.Courses)
+    {
+        <a asp-page="/Courses/AddStudent" asp-route-CourseId="@course.CourseId" class="btn btn-info mt-3" style="width: 50%;">
+            <div>CourseID: @course.CourseId</div>
+            <div>Name: @course.Name</div>
+        </a>
+    }
+</div>
